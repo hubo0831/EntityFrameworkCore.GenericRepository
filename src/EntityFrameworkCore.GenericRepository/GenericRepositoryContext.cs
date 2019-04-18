@@ -4,6 +4,11 @@ namespace EntityFrameworkCore.GenericRepository
 {
     public abstract class GenericRepositoryContext : DbContext
     {
-        protected abstract override void OnConfiguring(DbContextOptionsBuilder optionsBuilder);
+        public GenericRepositoryContext(DbContextOptions options) : base(options) { }
+        protected GenericRepositoryContext() : base() { }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+
+        }
     }
 }
